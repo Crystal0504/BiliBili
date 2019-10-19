@@ -1,0 +1,8 @@
+<view class="main">
+  <!-- Header -->
+  <MyTitle></MyTitle>
+  <!-- 视频详情 -->
+  <view class="video_info">
+    <video src="{{ videoInfo.videoSrc }}" controls="controls"></video>
+  </view>
+</view>
