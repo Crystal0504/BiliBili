@@ -6,7 +6,10 @@ Page({
    */
   data: {
     // 视频详情
-    videoInfo:null
+    videoInfo:null,
+    // 推荐视频
+    othersList:[],
+    CommentData:null
   },
 
   /**
@@ -15,20 +18,57 @@ Page({
   onLoad: function (options) {
     // console.log(options);
     let videoId = options.id;
+    // console.log(videoId);
     this.getCurrentVideo(videoId);
+    this.getOtherList(videoId);
+    this.getCommentList(videoId);
   },
   /**
-   * 根据视频ID获取视频详情
+   * 获取视频详情
    */
   getCurrentVideo(videoId){
     let that = this;
     wx.request({
-      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videoDetail?id='+videoId,
+      url: 'https://www.fastmock.site/mock/6907fc94db7def085d5f47570c6481b6/bili/videoDetail?id='+videoId,
       success(res){
         // console.log(res);
-        if(res.data.code === 0){
+        if (res.data.code == 0) {
           that.setData({
-            videoInfo:res.data.data.videoInfo
+            videoInfo: res.data.data.videoInfo
+          })
+        }
+      }
+    })
+  },
+  /**
+   * 获取推荐视频
+   */
+  getOtherList(videoId){
+    let that = this;
+    wx.request({
+      url: 'https://www.fastmock.site/mock/6907fc94db7def085d5f47570c6481b6/bili/othersList?id='+videoId,
+      success(res){
+        // console.log(res);
+        if(res.data.code == 0){
+          that.setData({
+            othersList:res.data.data.othersList
+          })
+        }
+      }
+    })
+},
+/**
+   * 获取评论数据
+   */
+  getCommentList(videoId){
+    let that = this;
+    wx.request({
+      url: 'https://www.fastmock.site/mock/6907fc94db7def085d5f47570c6481b6/bili/commentsList?id='+videoId,
+      success(res){
+        // console.log(res);
+        if(res.data.code == 0){
+          that.setData({
+            CommentData: res.data.data.commentData
           })
         }
       }

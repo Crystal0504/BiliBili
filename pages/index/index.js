@@ -28,7 +28,7 @@ Page({
   getNavList() {
     let that = this;
     wx.request({
-      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/navList',
+      url: 'https://www.fastmock.site/mock/cbc38526be9d8b70255a814c499e9378/BiliBili/navList',
       success(res) {
         // console.log(res);
         if (res.data.code === 0) {
@@ -45,7 +45,7 @@ Page({
   getSwiperList() {
     let that = this;
     wx.request({
-      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+      url: 'https://www.fastmock.site/mock/cbc38526be9d8b70255a814c499e9378/BiliBili/swiperList',
       success(res) {
         // console.log(res);
         if (res.data.code === 0) {
@@ -62,7 +62,7 @@ Page({
   getVideosList() {
     let that = this;
     wx.request({
-      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      url: 'https://www.fastmock.site/mock/cbc38526be9d8b70255a814c499e9378/BiliBili/videosList',
       success(res) {
         // console.log(res);
         if (res.data.code === 0) {
